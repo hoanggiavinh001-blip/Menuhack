@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire VIP Menu v5 Cyber Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        roboto: ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        gaming: {
+                            dark: '#05060b',
+                            card: '#0e111a',
+                            border: '#1e243b',
+                            cyan: '#00f0ff',
+                            red: '#ff0055',
+                            gold: '#ffd700',
+                            neonGreen: '#00ff66',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #05060b;
+            color: #ffffff;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(255, 0, 85, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(0, 240, 255, 0.12) 0%, transparent 40%);
+        }
+        .gaming-title {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .neon-glow-red {
+            box-shadow: 0 0 25px rgba(255, 0, 85, 0.35), inset 0 0 12px rgba(255, 0, 85, 0.2);
+        }
+        .neon-glow-cyan {
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.35), inset 0 0 12px rgba(0, 240, 255, 0.2);
+        }
+        .glow-text {
+            text-shadow: 0 0 12px rgba(255, 0, 85, 0.7), 0 0 25px rgba(0, 240, 255, 0.5);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #05060b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e243b;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff0055;
+        }
+        @keyframes pulse-warning {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.75; transform: scale(0.98); }
+        }
+        .warning-pulse {
+            animation: pulse-warning 1.4s infinite ease-in-out;
+        }
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(1000%); }
+        }
+        .scanline-effect::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.6), transparent);
+            animation: scanline 4s linear infinite;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-gaming-red selection:text-white">
+
+    <header class="w-full bg-gaming-card/85 backdrop-blur-xl border-b border-gaming-border p-3.5 shadow-2xl sticky top-0 z-40">
+        <div class="max-w-md mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="relative">
+                    <img src="IMG_0647.jpeg" alt="VIP Logo" 
+                         class="w-10 h-10 rounded-xl object-cover border-2 border-gaming-red shadow-[0_0_15px_#ff0055]"
+                         onerror="this.onerror=null; this.src='https://placehold.co/100x100/ff0055/ffffff?text=🔥';">
+                    <span class="absolute -bottom-1 -right-1 w-3 h-3 bg-gaming-neonGreen rounded-full border-2 border-gaming-dark animate-pulse"></span>
+                </div>
+                <div>
+                    <h1 class="gaming-title text-sm font-black bg-gradient-to-r from-gaming-red via-purple-400 to-gaming-cyan bg-clip-text text-transparent glow-text">
+                        FF VIP PANEL v5.0
+                    </h1>
+                    <p class="text-[9px] text-slate-400 tracking-wider font-orbitron">CYBERPUNK SECURE EDITION</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-1.5 bg-gaming-red/10 border border-gaming-red/30 px-3 py-1 rounded-full shadow-[0_0_10px_rgba(255,0,85,0.2)]">
+                <span class="w-2 h-2 rounded-full bg-gaming-red animate-ping"></span>
+                <span class="text-[10px] text-gaming-red font-bold font-orbitron">SECURE VIP</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div id="login-screen" class="w-full max-w-sm bg-gaming-card/90 backdrop-blur-2xl border border-gaming-red/50 rounded-2xl p-6 neon-glow-red transition-all duration-300 relative scanline-effect overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-gaming-red/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="text-center mb-6 relative z-10">
+                <div class="inline-flex p-3 bg-gaming-red/10 rounded-2xl mb-3 border border-gaming-red/30 neon-glow-red">
+                    <img src="IMG_0647.jpeg" alt="Icon" class="w-12 h-12 rounded-xl object-cover" onerror="this.onerror=null; this.src='https://placehold.co/100x100/ff0055/ffffff?text=🔐';">
+                </div>
+                <h2 class="gaming-title text-lg font-bold text-white tracking-wide">ĐĂNG NHẬP HỆ THỐNG</h2>
+                <p class="text-[11px] text-slate-400 mt-1">Xác thực mã bản quyền v5 để tiếp tục</p>
+            </div>
+
+            <form id="login-form" onsubmit="handleLogin(event)" class="space-y-4 relative z-10">
+                <div class="relative">
+                    <input type="password" id="password-input" placeholder="Nhập mật khẩu..." required
+                        class="w-full bg-slate-950/90 border border-gaming-border focus:border-gaming-red rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-gaming-red/40 transition-all font-roboto text-sm shadow-inner">
+                </div>
+
+                <div id="login-error" class="hidden text-gaming-red text-xs text-center font-semibold bg-red-500/10 border border-red-500/30 py-2 rounded-lg animate-pulse">
+                    Sai mật khẩu! Vui lòng lấy mật khẩu bên dưới.
+                </div>
+
+                <button type="submit" class="w-full bg-gradient-to-r from-gaming-red via-rose-600 to-gaming-red hover:opacity-95 text-white font-black font-orbitron py-3.5 rounded-xl shadow-lg shadow-gaming-red/40 transition-all duration-300 transform active:scale-95 text-xs uppercase tracking-widest border border-gaming-red/50">
+                    Xác Nhận Đăng Nhập
+                </button>
+            </form>
+
+            <div class="mt-5 pt-4 border-t border-gaming-border text-center relative z-10">
+                <button type="button" onclick="openGetPasswordModal()" class="text-xs font-orbitron text-gaming-cyan hover:text-cyan-300 underline underline-offset-4 transition-colors font-bold tracking-wide">
+                    🔑 Quên mật khẩu / Lấy mật khẩu
+                </button>
+            </div>
+        </div>
+
+        <div id="main-menu" class="w-full max-w-md hidden space-y-3.5">
+            
+            <!-- Features Container -->
+            <div class="bg-gaming-card/90 backdrop-blur-2xl border border-gaming-border/80 rounded-2xl p-4 shadow-2xl space-y-3">
+                <div class="flex items-center justify-between pb-2 border-b border-gaming-border">
+                    <span class="gaming-title text-xs font-bold text-gaming-red tracking-wider flex items-center space-x-1.5">
+                        <span>⚡</span><span>DANH SÁCH HACK VIP MỞ RỘNG</span>
+                    </span>
+                    <span class="text-[10px] text-gaming-cyan font-semibold font-orbitron">v5 Engine</span>
+                </div>
+
+                <div class="grid grid-cols-1 gap-2 max-h-[300px] overflow-y-auto pr-1">
+                    <!-- Feature 1: Auto Aim -->
+                    <div id="row-auto-aim" class="feature-row flex items-center justify-between p-2.5 bg-slate-950/60 border border-gaming-border rounded-xl transition-all hover:border-gaming-red/40">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-red-500/10 rounded-lg text-gaming-red border border-red-500/20">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white font-orbitron">Auto Aim</h4>
+                                <p class="text-[10px] text-slate-400">Khóa tâm tự động mượt cự ly xa</p>
+                            </div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="toggle-auto-aim" class="sr-only peer">
+                            <div class="w-9 h-5 bg-slate-900 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-gaming-red peer-checked:shadow-[0_0_10px_#ff0055]"></div>
+                        </label>
+                    </div>
+
+                    <!-- Feature 2: Boost FPS -->
+                    <div id="row-boost-fps" class="feature-row flex items-center justify-between p-2.5 bg-slate-950/60 border border-gaming-border rounded-xl transition-all hover:border-gaming-cyan/40">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-cyan-500/10 rounded-lg text-gaming-cyan border border-cyan-500/20">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white font-orbitron">Boost FPS</h4>
+                                <p class="text-[10px] text-slate-400">Mở khóa 120 FPS cực đỉnh</p>
+                            </div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="toggle-boost-fps" class="sr-only peer">
+                            <div class="w-9 h-5 bg-slate-900 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-gaming-cyan peer-checked:shadow-[0_0_10px_#00f0ff]"></div>
+                        </label>
+                    </div>
+
+                    <!-- Feature 3: Giảm lag -->
+                    <div id="row-giam-lag" class="feature-row flex items-center justify-between p-2.5 bg-slate-950/60 border border-gaming-border rounded-xl transition-all hover:border-emerald-500/40">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-emerald-500/10 rounded-lg text-emerald-400 border border-emerald-500/20">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white font-orbitron">Giảm lag</h4>
+                                <p class="text-[10px] text-slate-400">Tối ưu hóa đường truyền ping < 20ms</p>
+                            </div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="toggle-giam-lag" class="sr-only peer">
+                            <div class="w-9 h-5 bg-slate-900 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald-500 peer-checked:shadow-[0_0_10px_#00ff66]"></div>
+                        </label>
+                    </div>
+
+                    <!-- Feature 4: Aim nhẹ -->
+                    <div id="row-aim-nhe" class="feature-row flex items-center justify-between p-2.5 bg-slate-950/60 border border-gaming-border rounded-xl transition-all hover:border-amber-500/40">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-amber-500/10 rounded-lg text-amber-400 border border-amber-500/20">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white font-orbitron">Aim nhẹ</h4>
+                                <p class="text-[10px] text-slate-400">Hỗ trợ ghìm tâm bám sát mục tiêu</p>
+                            </div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="toggle-aim-nhe" class="sr-only peer">
+                            <div class="w-9 h-5 bg-slate-900 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-amber-500 peer-checked:shadow-[0_0_10px_#f59e0b]"></div>
+                        </label>
+                    </div>
+
+                    <!-- Feature 5: Wallhack ESP -->
+                    <div id="row-wallhack" class="feature-row flex items-center justify-between p-2.5 bg-slate-950/60 border border-gaming-border rounded-xl transition-all hover:border-purple-500/40">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-purple-500/10 rounded-lg text-purple-400 border border-purple-500/20">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white font-orbitron">Wallhack ESP</h4>
+                                <p class="text-[10px] text-slate-400">Xuyên tường, hiển thị khung địch</p>
+                            </div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="toggle-wallhack" class="sr-only peer">
+                            <div class="w-9 h-5 bg-slate-900 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-purple-500 peer-checked:shadow-[0_0_10px_#a855f7]"></div>
+                        </label>
+                    </div>
+
+                    <!-- Feature 6: Headshot 100% -->
+                    <div id="row-headshot" class="feature-row flex items-center justify-between p-2.5 bg-slate-950/60 border border-gaming-border rounded-xl transition-all hover:border-rose-500/40">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-rose-500/10 rounded-lg text-rose-400 border border-rose-500/20">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white font-orbitron">Headshot 100%</h4>
+                                <p class="text-[10px] text-slate-400">Tỷ lệ bách phát bách trúng đầu</p>
+                            </div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="toggle-headshot" class="sr-only peer">
+                            <div class="w-9 h-5 bg-slate-900 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-rose-500 peer-checked:shadow-[0_0_10px_#f43f5e]"></div>
+                        </label>
+                    </div>
+
+                    <!-- Feature 7: No Recoil -->
+                    <div id="row-no-recoil" class="feature-row flex items-center justify-between p-2.5 bg-slate-950/60 border border-gaming-border rounded-xl transition-all hover:border-indigo-500/40">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-indigo-500/10 rounded-lg text-indigo-400 border border-indigo-500/20">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white font-orbitron">No Recoil</h4>
+                                <p class="text-[10px] text-slate-400">Triệt tiêu độ giật súng hoàn toàn</p>
+                            </div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="toggle-no-recoil" class="sr-only peer">
+                            <div class="w-9 h-5 bg-slate-900 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-indigo-500 peer-checked:shadow-[0_0_10px_#6366f1]"></div>
+                        </label>
+                    </div>
+
+                    <!-- Feature 8: Antiban v5 -->
+                    <div id="row-antiban" class="feature-row flex items-center justify-between p-2.5 bg-slate-950/60 border border-gaming-border rounded-xl transition-all hover:border-blue-500/40">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-blue-500/10 rounded-lg text-blue-400 border border-blue-500/20">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white font-orbitron">Antiban v5</h4>
+                                <p class="text-[10px] text-slate-400">Bảo vệ tài khoản an toàn tuyệt đối</p>
+                            </div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="toggle-antiban" class="sr-only peer" checked disabled>
+                            <div class="w-9 h-5 bg-slate-900 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-blue-500 peer-checked:shadow-[0_0_10px_#3b82f6] opacity-80 cursor-not-allowed"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Selector -->
+            <div class="bg-gaming-card/90 backdrop-blur-2xl border border-gaming-border/80 rounded-2xl p-4 shadow-2xl space-y-3">
+                <div class="flex items-center justify-between pb-2 border-b border-gaming-border">
+                    <span class="gaming-title text-xs font-bold text-gaming-red tracking-wider">CHỌN PHIÊN BẢN GAME</span>
+                    <span class="text-[10px] text-gaming-cyan font-semibold font-orbitron">Yêu cầu chọn 1</span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <button type="button" onclick="selectGame('Free Fire Max')" id="game-btn-max" class="game-select-btn p-3 rounded-xl border border-gaming-border bg-slate-950/80 hover:border-gaming-red/60 flex flex-col items-center justify-center space-y-2 transition-all group">
+                        <div class="w-9 h-9 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center text-gaming-red group-hover:scale-110 transition-transform">
+                            <span class="text-xs font-black font-orbitron">MAX</span>
+                        </div>
+                        <span class="text-xs font-bold font-orbitron text-slate-300 group-hover:text-gaming-red">Free Fire Max</span>
+                    </button>
+
+                    <button type="button" onclick="selectGame('Free Fire')" id="game-btn-regular" class="game-select-btn p-3 rounded-xl border border-gaming-border bg-slate-950/80 hover:border-gaming-cyan/60 flex flex-col items-center justify-center space-y-2 transition-all group">
+                        <div class="w-9 h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-gaming-cyan group-hover:scale-110 transition-transform">
+                            <span class="text-xs font-black font-orbitron">FF</span>
+                        </div>
+                        <span class="text-xs font-bold font-orbitron text-slate-300 group-hover:text-gaming-cyan">Free Fire</span>
+                    </button>
+                </div>
+                <div id="game-selection-error" class="hidden text-amber-400 text-xs text-center font-semibold animate-pulse">
+                    ⚠️ Vui lòng chọn phiên bản game trước khi bật!
+                </div>
+            </div>
+
+            <!-- Activation & Control Panel Terminal -->
+            <div class="bg-gaming-card/90 backdrop-blur-2xl border border-gaming-border/80 rounded-2xl p-4 shadow-2xl space-y-3">
+                <button id="activate-btn" onclick="startActivation()" class="w-full bg-gradient-to-r from-gaming-red via-rose-600 to-gaming-cyan hover:opacity-95 text-white font-black font-orbitron py-3.5 rounded-xl shadow-lg shadow-gaming-red/40 transition-all duration-300 transform active:scale-95 text-xs uppercase tracking-widest flex items-center justify-center space-x-2 border border-gaming-red/50">
+                    <span>⚡ BẬT MENU HACK v5 ⚡</span>
+                </button>
+
+                <!-- Activation Status Container (Hidden initially) -->
+                <div id="activation-status-box" class="hidden space-y-3 pt-1">
+                    <!-- Control Panel Terminal Log Box -->
+                    <div id="terminal-box" class="w-full bg-black/95 border border-gaming-red/40 rounded-xl p-3 font-mono text-[10px] text-emerald-400 h-28 overflow-y-auto space-y-1 shadow-inner">
+                        <div class="text-slate-500">[SYSTEM] Khởi tạo bảng điều khiển v5...</div>
+                    </div>
+
+                    <div class="flex items-center justify-between bg-slate-950/90 border border-gaming-cyan/40 p-3 rounded-xl neon-glow-cyan">
+                        <div class="flex items-center space-x-3">
+                            <span id="rocket-icon" class="text-2xl animate-bounce">🚀</span>
+                            <div>
+                                <div id="status-title" class="text-xs font-bold text-gaming-cyan font-orbitron">ĐANG INJECT...</div>
+                                <div id="status-desc" class="text-[10px] text-slate-400">Đang tiêm mã vào hệ thống game</div>
+                            </div>
+                        </div>
+                        <div id="countdown-timer" class="text-lg font-black font-orbitron text-gaming-cyan">10s</div>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden border border-gaming-border">
+                        <div id="progress-bar" class="bg-gradient-to-r from-gaming-red via-purple-500 to-gaming-cyan h-full w-0 transition-all duration-1000"></div>
+                    </div>
+
+                    <div id="ready-message" class="hidden text-center py-2.5 bg-emerald-500/20 border border-emerald-500/50 rounded-xl text-emerald-400 text-xs font-bold font-orbitron animate-pulse">
+                        ✨ Vào game trải nghiệm ngay! ✨
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- GET PASSWORD MODAL -->
+    <div id="password-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md hidden transition-all p-4">
+        <div class="w-full max-w-md bg-gaming-card border border-gaming-cyan/50 rounded-2xl p-5 relative neon-glow-cyan max-h-[90vh] overflow-y-auto">
+            <!-- Close Button X -->
+            <button onclick="closeGetPasswordModal()" class="absolute right-4 top-4 text-slate-400 hover:text-white bg-slate-900 hover:bg-gaming-red w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition-colors border border-gaming-border">
+                ✕
+            </button>
+
+            <div class="text-center mb-4">
+                <h3 class="gaming-title text-sm font-bold text-gaming-cyan">HỆ THỐNG LẤY MẬT KHẨU v5</h3>
+                <p class="text-[11px] text-slate-400 mt-1">Hoàn thành 2 nhiệm vụ dưới đây để nhận mật khẩu</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Task 1: Color Text Typing -->
+                <div class="bg-slate-950/80 border border-gaming-border rounded-xl p-3.5 space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold font-orbitron text-slate-200">Nhiệm vụ 1: Nhập mã đổi màu</span>
+                        <span id="task1-status" class="text-[10px] text-amber-400 font-semibold">Chưa hoàn thành</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400">Nhập chính xác chuỗi ký tự bên dưới vào ô:</p>
+                    
+                    <!-- Color changing target string representation -->
+                    <div id="color-target-box" class="py-2 px-3 bg-black/80 rounded-lg text-center font-mono text-base font-black tracking-widest select-none border border-gaming-border">
+                        <span style="color: #ff0055">F</span><span style="color: #00f0ff">F</span><span style="color: #00ff66">-</span><span style="color: #f59e0b">V</span><span style="color: #a855f7">I</span><span style="color: #ec4899">P</span>
+                    </div>
+                    
+                    <div class="flex space-x-2">
+                        <input type="text" id="task1-input" placeholder="Nhập chuỗi trên..." 
+                            class="flex-grow bg-black border border-gaming-border focus:border-gaming-cyan rounded-lg px-3 py-2 text-xs text-white uppercase focus:outline-none font-mono">
+                        <button type="button" onclick="verifyTask1()" class="bg-gaming-cyan text-gaming-dark font-bold font-orbitron text-xs px-4 py-2 rounded-lg hover:bg-cyan-400 transition-colors">
+                            Xác nhận
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Task 2: Dual Sliders 3s Hold -->
+                <div class="bg-slate-950/80 border border-gaming-border rounded-xl p-3.5 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold font-orbitron text-slate-200">Nhiệm vụ 2: Kéo đồng thời 2 thanh (3s)</span>
+                        <span id="task2-status" class="text-[10px] text-amber-400 font-semibold">0 / 3s</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400">Kéo cả 2 thanh trượt xuống tối đa (100%) và giữ liên tục trong 3 giây:</p>
+                    
+                    <div class="space-y-2.5">
+                        <div>
+                            <div class="flex justify-between text-[10px] text-slate-400 mb-1">
+                                <span>Thanh A (Cyan)</span>
+                                <span id="val-slider-1" class="text-gaming-cyan font-bold">0%</span>
+                            </div>
+                            <input type="range" id="slider-1" min="0" max="100" value="0" class="w-full accent-gaming-cyan cursor-pointer" oninput="checkSliders()">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-[10px] text-slate-400 mb-1">
+                                <span>Thanh B (Red)</span>
+                                <span id="val-slider-2" class="text-gaming-red font-bold">0%</span>
+                            </div>
+                            <input type="range" id="slider-2" min="0" max="100" value="0" class="w-full accent-gaming-red cursor-pointer" oninput="checkSliders()">
+                        </div>
+                    </div>
+                    <div id="slider-warning" class="text-[10px] text-red-400 hidden text-center font-semibold animate-pulse">
+                        ⚠️ Cần giữ cả 2 thanh ở mức 100% liên tục 3 giây!
+                    </div>
+                </div>
+
+                <!-- Result Password Box -->
+                <div id="password-result-box" class="hidden bg-emerald-500/10 border border-emerald-500/40 rounded-xl p-4 text-center space-y-2">
+                    <span class="text-xs text-emerald-400 font-bold font-orbitron block">🎉 HOÀN THÀNH XUẤT SẮC NHIỆM VỤ!</span>
+                    <p class="text-[11px] text-slate-300">Mật khẩu VIP của bạn là:</p>
+                    <div class="bg-black/90 py-2.5 px-4 rounded-lg font-mono text-lg font-black text-gaming-cyan tracking-wider select-all border border-emerald-500/30" id="revealed-password">
+                        anhlalop
+                    </div>
+                    <button type="button" onclick="copyPassword()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-gaming-dark font-bold font-orbitron text-xs py-2.5 rounded-lg transition-colors shadow-lg shadow-emerald-500/20">
+                        📋 Sao chép mật khẩu & Đăng nhập ngay
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="w-full bg-red-950/80 border-t border-red-500/50 py-3 px-4 text-center sticky bottom-0 z-40 backdrop-blur-md">
+        <div class="max-w-md mx-auto flex items-center justify-center space-x-2">
+            <span class="text-red-400 animate-bounce">⚠️</span>
+            <span class="text-red-400 text-xs font-bold font-orbitron tracking-wider warning-pulse">KHÔNG ĐƯỢC ĐÓNG APP LẠI</span>
+            <span class="text-red-400 animate-bounce">⚠️</span>
+        </div>
+    </footer>
+
+    <script>
+        let selectedGameVersion = null;
+        let isActivating = false;
+
+        // Task state variables
+        let task1Completed = false;
+        let task2Completed = false;
+        let sliderInterval = null;
+        let sliderHoldTime = 0;
+
+        // Open modal
+        function openGetPasswordModal() {
+            document.getElementById('password-modal').classList.remove('hidden');
+        }
+
+        // Close modal
+        function closeGetPasswordModal() {
+            document.getElementById('password-modal').classList.add('hidden');
+        }
+
+        // Verify Task 1 (Color text typing target: FF-VIP)
+        function verifyTask1() {
+            const inputVal = document.getElementById('task1-input').value.trim().toUpperCase();
+            const statusEl = document.getElementById('task1-status');
+
+            if (inputVal === 'FF-VIP') {
+                task1Completed = true;
+                statusEl.textContent = 'Đã hoàn thành ✓';
+                statusEl.className = 'text-[10px] text-emerald-400 font-bold';
+                document.getElementById('task1-input').disabled = true;
+                checkAllTasksCompleted();
+            } else {
+                statusEl.textContent = 'Sai chuỗi! Thử lại';
+                statusEl.className = 'text-[10px] text-red-400 font-bold animate-pulse';
+            }
+        }
+
+        // Check Sliders Task 2
+        function checkSliders() {
+            if (task2Completed) return;
+
+            const val1 = parseInt(document.getElementById('slider-1').value);
+            const val2 = parseInt(document.getElementById('slider-2').value);
+            
+            document.getElementById('val-slider-1').textContent = val1 + '%';
+            document.getElementById('val-slider-2').textContent = val2 + '%';
+
+            const warningEl = document.getElementById('slider-warning');
+            const statusEl = document.getElementById('task2-status');
+
+            if (val1 === 100 && val2 === 100) {
+                warningEl.classList.add('hidden');
+                if (!sliderInterval) {
+                    sliderHoldTime = 0;
+                    sliderInterval = setInterval(() => {
+                        sliderHoldTime += 100;
+                        let seconds = (sliderHoldTime / 1000).toFixed(1);
+                        statusEl.textContent = `${seconds} / 3.0s`;
+                        statusEl.className = 'text-[10px] text-cyan-400 font-bold';
+
+                        // Check if either dropped during interval
+                        const currentV1 = parseInt(document.getElementById('slider-1').value);
+                        const currentV2 = parseInt(document.getElementById('slider-2').value);
+                        if (currentV1 < 100 || currentV2 < 100) {
+                            clearInterval(sliderInterval);
+                            sliderInterval = null;
+                            sliderHoldTime = 0;
+                            statusEl.textContent = 'Đã thả! Reset 0s';
+                            statusEl.className = 'text-[10px] text-red-400 font-semibold';
+                            warningEl.classList.remove('hidden');
+                            return;
+                        }
+
+                        if (sliderHoldTime >= 3000) {
+                            clearInterval(sliderInterval);
+                            task2Completed = true;
+                            statusEl.textContent = 'Đã hoàn thành ✓';
+                            statusEl.className = 'text-[10px] text-emerald-400 font-bold';
+                            document.getElementById('slider-1').disabled = true;
+                            document.getElementById('slider-2').disabled = true;
+                            warningEl.classList.add('hidden');
+                            checkAllTasksCompleted();
+                        }
+                    }, 100);
+                }
+            } else {
+                if (sliderInterval) {
+                    clearInterval(sliderInterval);
+                    sliderInterval = null;
+                    sliderHoldTime = 0;
+                    statusEl.textContent = 'Chưa đạt 100%';
+                    statusEl.className = 'text-[10px] text-amber-400 font-semibold';
+                    warningEl.classList.remove('hidden');
+                }
+            }
+        }
+
+        // Check if both tasks completed to reveal password
+        function checkAllTasksCompleted() {
+            if (task1Completed && task2Completed) {
+                document.getElementById('password-result-box').classList.remove('hidden');
+            }
+        }
+
+        // Copy revealed password and fill login
+        function copyPassword() {
+            const pwd = 'anhlalop';
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(pwd).then(() => {
+                    document.getElementById('password-input').value = pwd;
+                    closeGetPasswordModal();
+                }).catch(() => {
+                    fallbackCopy(pwd);
+                });
+            } else {
+                fallbackCopy(pwd);
+            }
+        }
+
+        function fallbackCopy(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                document.getElementById('password-input').value = text;
+                closeGetPasswordModal();
+            } catch (err) {
+                console.error('Không thể sao chép', err);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        // Handle login verification
+        function handleLogin(event) {
+            event.preventDefault();
+            const password = document.getElementById('password-input').value;
+            const errorDiv = document.getElementById('login-error');
+
+            if (password === 'anhlalop') {
+                const loginScreen = document.getElementById('login-screen');
+                const mainMenu = document.getElementById('main-menu');
+
+                loginScreen.classList.add('opacity-0', 'scale-95', 'transition-all', 'duration-300');
+                setTimeout(() => {
+                    loginScreen.classList.add('hidden');
+                    mainMenu.classList.remove('hidden');
+                    mainMenu.classList.add('opacity-100');
+                }, 300);
+            } else {
+                errorDiv.classList.remove('hidden');
+                document.getElementById('password-input').classList.add('border-red-500');
+                setTimeout(() => {
+                    document.getElementById('password-input').classList.remove('border-red-500');
+                }, 500);
+            }
+        }
+
+        // Game selection handler (automatically hides or visually confirms choice)
+        function selectGame(version) {
+            selectedGameVersion = version;
+            const maxBtn = document.getElementById('game-btn-max');
+            const regBtn = document.getElementById('game-btn-regular');
+            const errorMsg = document.getElementById('game-selection-error');
+
+            errorMsg.classList.add('hidden');
+
+            if (version === 'Free Fire Max') {
+                maxBtn.className = "game-select-btn p-3 rounded-xl border border-gaming-red bg-gaming-red/20 shadow-[0_0_15px_rgba(255,0,85,0.4)] flex flex-col items-center justify-center space-y-2 transition-all group scale-105";
+                regBtn.className = "game-select-btn p-3 rounded-xl border border-gaming-border bg-slate-950/80 hover:border-gaming-cyan/60 flex flex-col items-center justify-center space-y-2 transition-all group opacity-70";
+            } else {
+                regBtn.className = "game-select-btn p-3 rounded-xl border border-gaming-cyan bg-cyan-500/20 shadow-[0_0_15px_rgba(0,240,255,0.4)] flex flex-col items-center justify-center space-y-2 transition-all group scale-105";
+                maxBtn.className = "game-select-btn p-3 rounded-xl border border-gaming-border bg-slate-950/80 hover:border-gaming-red/60 flex flex-col items-center justify-center space-y-2 transition-all group opacity-70";
+            }
+        }
+
+        // Activation sequence with continuous terminal injection logs
+        function startActivation() {
+            if (!selectedGameVersion) {
+                const errorMsg = document.getElementById('game-selection-error');
+                errorMsg.classList.remove('hidden');
+                return;
+            }
+
+            if (isActivating) return;
+            isActivating = true;
+
+            const activateBtn = document.getElementById('activate-btn');
+            const statusBox = document.getElementById('activation-status-box');
+            const terminalBox = document.getElementById('terminal-box');
+            const progressBar = document.getElementById('progress-bar');
+            const countdownTimer = document.getElementById('countdown-timer');
+            const statusTitle = document.getElementById('status-title');
+            const statusDesc = document.getElementById('status-desc');
+            const readyMessage = document.getElementById('ready-message');
+
+            activateBtn.disabled = true;
+            activateBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            statusBox.classList.remove('hidden');
+
+            // Collect active toggles
+            const toggles = ['auto-aim', 'boost-fps', 'giam-lag', 'aim-nhe', 'wallhack', 'headshot', 'no-recoil', 'antiban'];
+            let activeFeatures = [];
+            toggles.forEach(id => {
+                const checkbox = document.getElementById(`toggle-${id}`);
+                const row = document.getElementById(`row-${id}`);
+                if (checkbox && checkbox.checked) {
+                    activeFeatures.push(id.toUpperCase());
+                    row.classList.add('border-gaming-red', 'shadow-[0_0_12px_rgba(255,0,85,0.3)]', 'bg-slate-900');
+                }
+            });
+
+            // Terminal log generator array (runs continuously)
+            const terminalLogs = [
+                `[INIT] Establishing secure socket with ${selectedGameVersion} v5 core...`,
+                `[BYPASS] Hooking kernel level protection layers...`,
+                `[MEMORY] Injecting active modules: [${activeFeatures.join(', ')}]...`,
+                `[SECURITY] Applying Antiban v5 encrypted signature checksum...`,
+                `[PATCH] Overriding target memory offsets & aim vectors...`,
+                `[OPTIMIZE] FPS unlocked to 120Hz stably with minimal latency.`,
+                `[SUCCESS] All hooks successfully secured and operational.`
+            ];
+
+            let logIndex = 0;
+            const logInterval = setInterval(() => {
+                const logDiv = document.createElement('div');
+                logDiv.className = logIndex % 2 === 0 ? 'text-emerald-400' : 'text-cyan-400';
+                logDiv.textContent = terminalLogs[logIndex % terminalLogs.length];
+                terminalBox.appendChild(logDiv);
+                terminalBox.scrollTop = terminalBox.scrollHeight;
+                logIndex++;
+            }, 1000);
+
+            let timeLeft = 10;
+            progressBar.style.width = '0%';
+
+            const interval = setInterval(() => {
+                timeLeft--;
+                let percent = ((10 - timeLeft) / 10) * 100;
+                progressBar.style.width = percent + '%';
+                countdownTimer.textContent = timeLeft + 's';
+
+                if (timeLeft === 7) {
+                    statusTitle.textContent = "ĐANG TỐI ƯU HÓA...";
+                    statusDesc.textContent = `Thiết lập cấu hình cấu trúc v5 cho ${selectedGameVersion}`;
+                } else if (timeLeft === 4) {
+                    statusTitle.textContent = "BẢO MẬT ANTBAN v5...";
+                    statusDesc.textContent = "Kích hoạt ngụy trang chống quét hệ thống";
+                } else if (timeLeft === 1) {
+                    statusTitle.textContent = "HOÀN TẤT INJECT!";
+                    statusDesc.textContent = "Chuẩn bị khởi chạy game...";
+                }
+
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    clearInterval(logInterval);
+                    countdownTimer.textContent = "0s";
+                    readyMessage.classList.remove('hidden');
+                    statusTitle.textContent = "SẴN SÀNG CHIẾN ĐẤU!";
+                    statusDesc.textContent = `Đã kết nối thành công với ${selectedGameVersion} v5`;
+                    
+                    activateBtn.innerHTML = `<span>🎮 ĐÃ KÍCH HOẠT HỆ THỐNG v5 THÀNH CÔNG</span>`;
+                    activateBtn.classList.remove('from-gaming-red', 'via-rose-600', 'to-gaming-cyan');
+                    activateBtn.classList.add('bg-emerald-500', 'text-white', 'shadow-[0_0_25px_rgba(0,255,102,0.6)]');
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
